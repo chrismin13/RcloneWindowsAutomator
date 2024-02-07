@@ -1,5 +1,8 @@
 # example-config.py - Template configuration for the backup script setup.
 
+# Do not touch unless you've checked that you have upgraded according to a newer example-config.py. 
+VERSION = 1
+
 # ENABLED_FEATURES
 # Control which functionalities are active. Set to False to disable specific operations.
 ENABLED_FEATURES = {
