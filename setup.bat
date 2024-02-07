@@ -1,5 +1,5 @@
 @echo off
 
-winget install python3
+start "" https://www.python.org/downloads/
 winget install Rclone.Rclone
 pip install requests
