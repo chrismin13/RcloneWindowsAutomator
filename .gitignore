@@ -1,0 +1,6 @@
+# Configuration Files
+config.py
+healthcheck-url.txt
+personal-configs/
+# Logs
+log-*.txt
