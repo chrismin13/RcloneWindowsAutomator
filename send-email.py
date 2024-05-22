@@ -30,7 +30,7 @@ try:
     # File to be sent, adjust zbackup_log path according to config.py
     date_str = datetime.datetime.now().strftime("%Y-%m-%d")
     zbackup_log = f"{SQL_BACKUP_SETTINGS['sql_backup_path']}/{SQL_BACKUP_SETTINGS['backup_name_prefix']}{date_str}.log"
-    attachment_file_paths = ['log-python.txt', "log-cmd.txt", "log-rclone.txt", zbackup_log] # Add more files here if needed
+    attachment_file_paths = ['log-python.txt', "log-cmd.txt", "log-rclone.txt", zbackup_log, "log-task.txt"] # Add more files here if needed
 
     # Create a multipart message and set headers
     message = MIMEMultipart()
@@ -53,6 +53,7 @@ try:
 
             # Add attachment to message
             message.attach(part)
+            print("Added " + attachment_file_path + " as an attachment")
 
     text = message.as_string()
 
@@ -61,6 +62,7 @@ try:
         server.starttls()
         server.login(sender_email, sender_password)
         server.sendmail(sender_email, receiver_email, text)
+        print("Sent email")
 except Exception as e:
     # Save a log file with the error and send a healthchecks.io failure
     log_file = (

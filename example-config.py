@@ -16,7 +16,7 @@ ENABLED_FEATURES = {
 EMAIL_SETTINGS = {
     "machine_name": "YourMachineName",  # Will be included in the subject line to identify the machine.
     "smtp_server": "smtp.example.com",
-    "smtp_port": 587,
+    "smtp_port": 587, # Connection must be TLS
     "email_from": "your_email@example.com",
     "email_to": "recipient_email@example.com",
     "email_username": "your_email@example.com",
@@ -35,8 +35,8 @@ with open('healthcheck-url.txt', 'r') as file:
 NETWORK_SHARE = {
     "path": "\\\\your_network_share_path\\folder_name",
     "drive_letter": "Z:",
-    username = "your_smb_username",
-    password = "your_smb_password",
+    "username" = "your_smb_username",
+    "password" = "your_smb_password",
 }
 
 # BACKUP_SETTINGS
