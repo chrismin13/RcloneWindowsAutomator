@@ -1,7 +1,7 @@
 # example-config.py - Template configuration for the backup script setup.
 
 # Do not touch unless you've checked that you have upgraded according to a newer example-config.py. 
-VERSION = 1
+VERSION = 2
 
 # ENABLED_FEATURES
 # Control which functionalities are active. Set to False to disable specific operations.
@@ -16,7 +16,7 @@ ENABLED_FEATURES = {
 EMAIL_SETTINGS = {
     "machine_name": "YourMachineName",  # Will be included in the subject line to identify the machine.
     "smtp_server": "smtp.example.com",
-    "smtp_port": 465,
+    "smtp_port": 587,
     "email_from": "your_email@example.com",
     "email_to": "recipient_email@example.com",
     "email_username": "your_email@example.com",
@@ -35,6 +35,8 @@ with open('healthcheck-url.txt', 'r') as file:
 NETWORK_SHARE = {
     "path": "\\\\your_network_share_path\\folder_name",
     "drive_letter": "Z:",
+    username = "your_smb_username",
+    password = "your_smb_password",
 }
 
 # BACKUP_SETTINGS
@@ -47,7 +49,7 @@ BACKUP_SETTINGS = {
         # SHOULD ALWAYS BE IN THE FORMAT "C:/path/to/dir", no relative paths.
     ],
     "backup_destination_prefix": "Z:/BackupDestination",
-    "rclone_bandwidth_limit": None,  # Bandwidth limit for rclone, e.g., "10M" for 10 MBytes/sec. Set to None for no limit.
+    "rclone_bandwidth_limit": None,  # Bandwidth limit for rclone, e.g., "10M" for 10mbps. Set to None for no limit.
 }
 
 # SQL_BACKUP_SETTINGS
